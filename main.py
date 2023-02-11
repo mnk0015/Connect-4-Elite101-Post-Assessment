@@ -7,11 +7,13 @@ print("WELCOME TO CONNECT 4!")
 user1 = input("Player 1 Name: \n")
 user2 = input("Player 2 Name: \n")
 
-board = [['-' for x in range(6)] for y in range(6)]
+def reset_board():
+  global board
+  board = [['-' for x in range(6)] for y in range(6)]
 
 def print_board():
-    for row in board:
-        print(' '.join(row))
+  for row in board:
+      print(' '.join(row))
 
 def drop_circle(column, player):
     for i in range(5, -1, -1):
@@ -45,8 +47,20 @@ def win_check(player):
                 return True
 
     return False
+def play_again():
+    while True:
+        play_again = input("Want to play again? Enter y or n: \n")
+        if play_again == "y":
+            print_board()
+            game()
+        elif play_again == "n":
+            exit()
+        else:
+            print("Invalid input. Please enter 'y' or 'n'.")
+            continue 
 
 def game():
+    reset_board()
     player = 'X'
     while True:
         print_board()
@@ -70,14 +84,6 @@ def game():
             player = 'X'
         else:
             player = 'O'
-    play_again = input("Want to play again? Enter y or n.")
-    if play_again == "y":
-      game()
-    elif play_again == "n":
-      exit()
-    else:
-      play_again()
+    play_again()
 
 game()
-
-print_board()

@@ -7,7 +7,7 @@ This line is added from Repl.it.
 # Introduction
 
 
-This is a repository created by *Mohammed*
+This is a repository created by *mnk0015*
 
 
 ## Usage
@@ -16,7 +16,7 @@ This is a repository created by *Mohammed*
 Run this command to execute the application:
 
 
-`python filename.py`
+`python main.py`
 
  
 
